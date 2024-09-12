@@ -7,11 +7,20 @@
 <div class="text-center" id="contentDiv">
         <h1 class="display-4">Удаление пустых папок</h1>
         <p><a href="https://oauth.yandex.ru/authorize?response_type=code&client_id=829dcf0d2cc248159d4477d3dcc56f06">Перейдите по ссылке и введите код</a></p>
-        <form class="form-control" asp-controller="Home" asp-action="Run">
+    <form id="myform" class="form-control" asp-controller="Home" asp-action="Run">
             <label>Введите код</label>
         <input type="text" class="form-control" id="inpVal" asp-for="@code" />
         <br />
-        <input type="submit" class="btn btn-primary" value="Выполнить"/>
+        <input type="submit" class="btn btn-primary" value="Выполнить" onclick='waitFunc()'/>
         <br />
     </form>
 </div>
+
+@section Scripts{
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+        function waitFunc() {
+            document.getElementById('contentDiv').style.display = 'none';
+        }
+</script>
+}

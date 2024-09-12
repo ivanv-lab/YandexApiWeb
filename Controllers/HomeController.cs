@@ -24,7 +24,7 @@ namespace YandexApiWeb.Controllers
             string oauthToken = await authManager.GetToken(code);
             var diskManager = new YandexFileManager(oauthToken);
             await diskManager.Run();
-            return View("_Done");
+            return View("Done"); 
         }
 
         public IActionResult Privacy()
