@@ -7,6 +7,7 @@ namespace YandexApiWeb.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private static bool _isProcessing=false;
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -23,17 +24,7 @@ namespace YandexApiWeb.Controllers
             string oauthToken = await authManager.GetToken(code);
             var diskManager = new YandexFileManager(oauthToken);
             await diskManager.Run();
-            return View("Done");
-        }
-
-        public async Task<IActionResult> Wait()
-        {
-            return View("Wait");
-        }
-
-        public async Task<IActionResult> Done()
-        {
-            return View("Done");
+            return View("_Done");
         }
 
         public IActionResult Privacy()

@@ -1,20 +1,17 @@
-﻿@model YandexFileManager
-@{
+﻿@{
     ViewData["Title"] = "Home Page";
     string code = null;
     string result = null;
 }
 
-<div class="text-center">
+<div class="text-center" id="contentDiv">
         <h1 class="display-4">Удаление пустых папок</h1>
         <p><a href="https://oauth.yandex.ru/authorize?response_type=code&client_id=829dcf0d2cc248159d4477d3dcc56f06">Перейдите по ссылке и введите код</a></p>
         <form class="form-control" asp-controller="Home" asp-action="Run">
             <label>Введите код</label>
-        <input type="text" class="form-control" asp-for="@code" />
+        <input type="text" class="form-control" id="inpVal" asp-for="@code" />
         <br />
-        <input type="submit" class="btn btn-primary" value="Выполнить" />
+        <input type="submit" class="btn btn-primary" value="Выполнить"/>
         <br />
     </form>
 </div>
-
-
