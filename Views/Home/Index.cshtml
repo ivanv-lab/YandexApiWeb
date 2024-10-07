@@ -6,9 +6,9 @@
 
 <div class="text-center" id="contentDiv">
         <h1 class="display-4">Удаление пустых папок</h1>
-        <p><a href="https://oauth.yandex.ru/authorize?response_type=code&client_id=829dcf0d2cc248159d4477d3dcc56f06">Перейдите по ссылке и введите код</a></p>
+    <p><h2><a href="https://oauth.yandex.ru/authorize?response_type=code&client_id=829dcf0d2cc248159d4477d3dcc56f06">Перейдите по ссылке и введите код</a></h2></p>
     <form id="myform" class="form-control" asp-controller="Home" asp-action="Run">
-            <label>Введите код</label>
+            <label><h2>Введите код</h2></label>
         <input type="text" class="form-control" id="inpVal" asp-for="@code" />
         <br />
         <input type="submit" class="btn btn-primary" value="Выполнить" onclick='waitFunc()'/>
